@@ -1,0 +1,20 @@
+# Fuseki configuration file
+@prefix fuseki: <http://jena.apache.org/fuseki#> .
+@prefix ja:     <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix tdb2:   <http://jena.apache.org/2016/tdb#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+[] rdf:type fuseki:Server ;
+   fuseki:services (
+     [ rdf:type fuseki:Service ;
+       fuseki:name "data" ;
+       fuseki:serviceQuery "sparql" ;
+       fuseki:serviceUpdate "update" ;
+       fuseki:serviceUpload "upload" ;
+       fuseki:serviceReadWriteGraphStore "data" ;
+       fuseki:dataset [
+         rdf:type tdb2:DatasetTDB ;
+         tdb2:location "/fuseki-data" ;
+       ]
+     ]
+   ) .

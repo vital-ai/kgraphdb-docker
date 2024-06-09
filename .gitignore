@@ -1,1 +1,10 @@
 .idea/*
+**/.DS_Store
+
+configuration/*
+databases/*
+fuseki-data/*
+
+!fuseki-data/.keep
+!configuration/.keep
+!databases/.keep
